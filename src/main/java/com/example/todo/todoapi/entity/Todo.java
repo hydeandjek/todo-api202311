@@ -8,9 +8,8 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Setter @Getter
-@ToString
-@EqualsAndHashCode(of = "todoId")
-@AllArgsConstructor @NoArgsConstructor
+@ToString @EqualsAndHashCode(of = "todoId")
+@NoArgsConstructor @AllArgsConstructor
 @Builder
 @Entity
 @Table(name = "tbl_todo")
@@ -21,11 +20,12 @@ public class Todo {
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String todoId;
 
-    @Column(nullable = false,length = 30)
+    @Column(nullable = false, length = 30)
     private String title; // 할 일
-
+    
     private boolean done; // 할 일 완료 여부
 
     @CreationTimestamp
     private LocalDateTime createDate; // 등록 시간
+    
 }
