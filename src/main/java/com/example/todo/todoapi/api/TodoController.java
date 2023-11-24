@@ -11,12 +11,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.lang.model.util.Elements;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/api/todos")
+@CrossOrigin(origins = "http://localhost:3000")
 public class TodoController {
 
     private final TodoService todoService;
